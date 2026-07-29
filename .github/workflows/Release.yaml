@@ -43,7 +43,7 @@ jobs:
 
       - name: 构建 Go 后端（${{ matrix.arch }}）
         run: |
-          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -tags vue -ldflags="-s -w" -o fluxor-${{ matrix.arch }}
+          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -tags vue -ldflags="-s -w -linkmode external -extldflags "-static"" -o fluxor-${{ matrix.arch }}
 
       - name: 上传 fluxor-${{ matrix.arch }} 作为 Artifact
         uses: actions/upload-artifact@v6
