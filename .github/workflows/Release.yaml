@@ -52,8 +52,8 @@ jobs:
           CGO_ENABLED=1 \
           GOOS=linux \
           GOARCH=arm64 \
-          CC="zig cc -target aarch64-linux-gnu.2.31" \
-          go build -tags vue -ldflags="-s -w" -o fluxor-${{ matrix.arch }}
+          CC="zig cc -target aarch64-linux-musl" \
+          go build -tags vue -ldflags="-linkmode external -extldflags '-static' -s -w" -o fluxor-${{ matrix.arch }}
           
 
       - name: 上传 fluxor-${{ matrix.arch }} 作为 Artifact
