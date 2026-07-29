@@ -27,10 +27,10 @@ jobs:
         with:
           go-version: '1.26'
 
-      - name: Set up Zig
-        uses: mlugg/setup-zig@v1
+      - name: 设置 zig 环境
+        uses: actions/setup-zig@v6
         with:
-          version: 0.16.0
+          go-version: '0.16.0'
 
 
       - name: 修改 package.json 版本号（追加 commit 哈希）
@@ -47,7 +47,7 @@ jobs:
           npm ci
           npm run build
 
-      - name: Build with Zig CC (Target GLIBC 2.31 for Debian 11 ARM64)
+      - name: Build with Zig CC 
         run: |
           CGO_ENABLED=1 \
           GOOS=linux \
