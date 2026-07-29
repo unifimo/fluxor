@@ -25,7 +25,7 @@ jobs:
       - name: 设置 Go 环境
         uses: actions/setup-go@v6
         with:
-          go-version: '1.22-bullseye'
+          go-version: '1.22.12'
 
       - name: 修改 package.json 版本号（追加 commit 哈希）
         run: |
