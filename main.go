@@ -78,7 +78,7 @@ func setDefaults(mode string) {
 	default: // fnos 模式（默认）
 		socketPath = "/var/apps/Fluxor/target/app.sock"
 		baseURL = "/app/Fluxor"
-		tcpAddr = ""
+		tcpAddr = "10.1.1.1:9098"
 		fluxorPidFile = "/var/apps/Fluxor/var/fluxor.pid"
 		fluxorBinDir = "/var/apps/Fluxor/target/bin/"
 		corePidFile = "/var/apps/Fluxor/var/core.pid"
